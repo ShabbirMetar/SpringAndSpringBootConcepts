@@ -1,0 +1,17 @@
+package com.practice.main;
+
+import com.practice.bean.Student;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context1 = new ClassPathXmlApplicationContext("applicationContext.xml");
+        Student student1 = (Student)context1.getBean("stu1");
+        Student student2 = (Student)context1.getBean("stu2");
+
+        System.out.println(student1);
+        System.out.println("******************************");
+        System.out.println(student2);
+    }
+}

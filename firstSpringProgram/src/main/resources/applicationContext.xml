@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean class="com.practice.bean.Student"  id="stu1">
+        <property name="name" value="Shabbir"/>
+        <property name="roll" value="101"/>
+        <property name="email" value="Shabbir@gmail.com"/>
+
+    </bean>
+    <bean class="com.practice.bean.Student"  id="stu2">
+        <property name="name" value="Ali"/>
+        <property name="roll" value="102"/>
+        <property name="email" value="Ali@gmail.com"/>
+
+    </bean>
+
+</beans>
+
+<!--we need schema for configuring the file and this schema is obtained from the net-->
+<!--note that this is the normal java program in maven archtype, to convert this into a spring project we need to add the jar file of spring core and spriing context but since we are using maven we just need to add the dependency in the pom.xml maven will automaticaly will add the jar files of the following-->
+
+<!--for schema :  search on browser  spring xml configuration schema-->
