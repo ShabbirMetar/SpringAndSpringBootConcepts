@@ -16,6 +16,15 @@ public class Address {
     public void setCity(String city) {
         this.city = city;
     }
+    public Address() {
+        System.out.println("Inside Address default Constructor");
+    }
+    public Address(int houseNo, String city, int pincode) {
+        System.out.println("Address parameterized Constructor");
+        setHouseNo(houseNo);
+        setCity(city);
+        setPincode(pincode);
+    }
 
     @Override
     public String toString(){

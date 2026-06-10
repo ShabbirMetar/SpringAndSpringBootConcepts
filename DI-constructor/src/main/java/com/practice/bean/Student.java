@@ -17,6 +17,16 @@ public class Student {
         this.name = name;
     }
 
+    public Student(){
+        System.out.println("Student default constructor");
+    }
+    public Student(String name, int age, Address address){
+        System.out.println("Student parameter constructor");
+        setName(name);
+        setAge(age);
+        setAddress(address);
+    }
+
     @Override
     public String toString() {
         return "Student{" +

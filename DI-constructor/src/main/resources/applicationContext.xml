@@ -4,6 +4,8 @@
        xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+<!--    for setter dependency injection we use property tag-->
     <bean class="com.practice.bean.Address" id="add1">
         
         <property name="houseNo" value="10"/>
@@ -16,6 +18,20 @@
         <property name="name" value="Shabbir"/>
         <property name="age" value="21"/>
         <property name="address" ref="add1"/>
+
+    </bean>
+
+<!--    for constructor dependency injection we use constructor-arg tag and we need to pass value as we have defined in the parameterized constructor-->
+    <bean class="com.practice.bean.Address" id="add2">
+        <constructor-arg value="11"/>
+        <constructor-arg value="Ahmedabad"/>
+        <constructor-arg value="349823"/>
+    </bean>
+
+    <bean class="com.practice.bean.Student" id="stu2">
+        <constructor-arg value="ALI"/>
+        <constructor-arg value="25"/>
+        <constructor-arg ref="add2"/>
 
     </bean>
 </beans>
