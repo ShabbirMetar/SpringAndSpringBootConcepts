@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean class="com.practice.bean.Address" id="address" autowire-candidate="false">
+        <property name="houseNo" value="10"/>
+        <property name="city" value="Amreli"/>
+    </bean>
+    <bean class="com.practice.bean.Address" id="add1" autowire-candidate="true">
+        <property name="houseNo" value="11"/>
+        <property name="city" value="A"/>
+    </bean>
+    <bean class="com.practice.bean.Address" id="add2"  autowire-candidate="false">
+        <property name="houseNo" value="12"/>
+        <property name="city" value="B"/>
+    </bean>
+    <bean class="com.practice.bean.Address" id="add3" autowire-candidate="false">
+        <property name="houseNo" value="13"/>
+        <property name="city" value="C"/>
+    </bean>
+    <bean class="com.practice.bean.Address" id="add4" autowire-candidate="false">
+        <property name="houseNo" value="14"/>
+        <property name="city" value="D"/>
+    </bean>
+<!--    for autowire atrribute to use mode  : byName , it will select the that bean object to be injected will be of the same name as it is defined in the field property for eg
+ Class Student{
+    Address address;
+ }
+ now the bean with name address will be injected
+ -->
+    <bean class="com.practice.bean.Student" id="stu1" autowire="byName">
+        <property name="name" value="Shabbir"/>
+    </bean>
+<!--byType : it will inject the bean object that are defined for our case we have 5 address beans so byType will provide with error, to deal with this every address beans need to give attribute autowire-candidate as false except for the one that we need to inject,
+in our case except for add1 every Address bean autowire-candidate is marked false -->
+    <bean class="com.practice.bean.Student" id="stu2" autowire="byType">
+        <property name="name" value="Shabbir"/>
+    </bean>
+<!-- every automatic dependency injection using autowire is done using setter method dependency injection, to use the constructor we need to define autowire attribute as "constructor"-->
+
+</beans>
